@@ -50,6 +50,7 @@ void MortarGrenade::fire(Location targetLocation, Time flyingTime)
 	whistle = false;
 }
 
+
 const float NapalmBomb::WEIGHT = 340.0f;
 const Distance NapalmBomb::IMAGE_DISTANCE_TO_CORNER = sqrt(16.0f * 16.0f + 24.0f * 24.0f);
 const Angle NapalmBomb::IMAGE_ANGLE_TO_CORNER = atan(16.0f / 24.0f);
@@ -110,7 +111,6 @@ void NapalmBomb::processInteraction(void)
 	rotation += ROTATION_SPEED * timerDelta;
 	angle = direction + 0.2f * sin(rotation);
 }
-
 
 void NapalmBomb::render(void)
 {
@@ -257,15 +257,18 @@ bool MortarTeam::finishedFiring(void)
 	return returnValue;
 }
 
+
 void FireSupportUnit::set(CombatObject::SIDE side)
 {
 	CombatObject::set(GameObject::FIRE_SUPPORT, Location(FLT_MAX, FLT_MAX), 0.0f, side);
 }
 
+
 MortarPlatoon::MortarPlatoon(CombatObject::SIDE side)
 {
 	set(side);
 }
+
 void MortarPlatoon::set(CombatObject::SIDE side)
 {
 	FireSupportUnit::set(side);
@@ -671,6 +674,8 @@ void NapalmStrike::stopCheckingObjects(void)
 		check = false;
 	}
 }
+
+
 char FireSupport::messages[CombatObject::NUMBER_OF_SIDES][NUMBER_OF_TYPES][256];
 char FireSupport::typeNames[NUMBER_OF_TYPES][64];
 

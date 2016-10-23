@@ -11,7 +11,6 @@ FlyingObjectsParticleSystem::FlyingObjectsParticleSystem()
 	}
 }
 
-
 void FlyingObjectsParticleSystem::set(
 	float FPS,
 	int emission,
@@ -265,7 +264,6 @@ void FlyingObjectsParticleSystem::Update(float timerDelta)
 
 					}
 
-
 					particles[i].bounces++;
 				}
 			}
@@ -319,6 +317,7 @@ float FlyingObjectsParticleSystem::GetAge(void)
 	return hge->Timer_GetTime() - startTime;
 }
 
+
 #define OBJECT_LIMIT_FOR_SOUND_EMITTERS 70
 void FlyingDebris::createSoundEmitter(float x, float y)
 {
@@ -332,6 +331,7 @@ void FlyingDebris::createSoundEmitter(float x, float y)
 	}
 }
 
+
 FlyingSoil::FlyingSoil()
 {
 	nSprites = 1;
@@ -344,6 +344,7 @@ void FlyingSoil::makeSoundEmitter(float x, float y)
 	e->ed = new SoilDebrisFallEffectData();
 	game.objects.addGameObject(e);
 }
+
 
 FlyingMetal::FlyingMetal()
 {
@@ -361,6 +362,7 @@ void FlyingMetal::makeSoundEmitter(float x, float y)
 	game.objects.addGameObject(e);
 }
 
+
 FlyingSand::FlyingSand()
 {
 	nSprites = 1;
@@ -374,11 +376,13 @@ void FlyingSand::makeSoundEmitter(float x, float y)
 	game.objects.addGameObject(e);
 }
 
+
 RippedCamoNet::RippedCamoNet()
 {
 	nSprites = 1;
 	sprites[0] = game.animations[Game::ANIMATION_PARTICLE_SPRITE_CAMO_NET_1];
 }
+
 
 MovedSandBags::MovedSandBags()
 {
@@ -392,6 +396,7 @@ void MovedSandBags::makeSoundEmitter(float x, float y)
 	e->ed = new SandbagFallEffectData();
 	game.objects.addGameObject(e);
 }
+
 
 #define COMPLEX_PS_UPDATE_SPEED 30.0f
 ComplexParticleSystem::ComplexParticleSystem()
@@ -420,7 +425,6 @@ ComplexParticleSystem::~ComplexParticleSystem()
 		}
 	}
 }
-
 
 void ComplexParticleSystem::setPS(hgeParticleSystemInfo * psi)
 {
@@ -584,6 +588,7 @@ bool ComplexParticleSystem::isActive(void)
 	return ret;
 }
 
+
 CustomParticleManager::CustomParticleManager()
 :lastInd(0)
 ,x(0.0f)
@@ -688,6 +693,7 @@ bool CustomParticleManager::areAllFinished(void)
 	return ret;
 }
 
+
 DebrisFallEffectData::DebrisFallEffectData()
 {
 	nGroundHitSounds = 0;
@@ -763,6 +769,7 @@ SandbagFallEffectData::SandbagFallEffectData()
 
 	volume = 100;
 }
+
 
 int Effect::amount = 0;
 
@@ -1172,7 +1179,7 @@ void Effect::set(EFFECTTYPE effectType, Location location, float direction, Game
 			illuminationTimer = 3.0f;
 			illuminationSize = 12.0f;
 			counter2 = illuminationSize ;
-			collisionTimer = FLT_MAX;//SHELL_EXPLOSION_DANGEROUS_TIME;
+			collisionTimer = FLT_MAX;
 			counter1 = 3.0f;
 			timer1 = TANK_EXPLOSION_SMOKE_TIME;
 			timer2 = TANKSHELL_EXPLOSION_DEBRIS_STOP_TIME;
@@ -1187,7 +1194,7 @@ void Effect::set(EFFECTTYPE effectType, Location location, float direction, Game
 			ed = new TankExplosionEffectData();
 			TankExplosionEffectData * ted = static_cast<TankExplosionEffectData *>(ed);
 			
-			ted->foParticleSystem.set(//sprites, nSprites,
+			ted->foParticleSystem.set(
 				50, 50, 0xff000000, 0xff333333, true, 0.05f, 0.25f, 1.0f,
 				2, 1.0f, 5.0f, 10.0f);
 			ted->foParticleSystem.FireAt(x, y, 10.0f, 1.0f, 0.0f, M_PI / 4.0f, 
@@ -1218,7 +1225,7 @@ void Effect::set(EFFECTTYPE effectType, Location location, float direction, Game
 				PI_TIMES_TWO, HALF_PI, 50.0f, 110.0f);
 
 			//pieces of camo net
-			bed->camoNet.set(//&game.animations[Game::ANIMATION_PARTICLE_SPRITE_CAMO_NET_1], 1,
+			bed->camoNet.set(
 				50.0f, 10 * scale, 0xfff0f0f0, 0xffffffff, true, 1.0f, 1.0f, 1.0f,
 				1, 1.0f, 5.0f, 10.0f);
 
@@ -2131,6 +2138,7 @@ void Effect::destroy(void)
 	}
 	GameObject::destroy();
 }
+
 
 Shake_Effect::Shake_Effect(void)
 {

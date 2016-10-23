@@ -97,7 +97,6 @@ void SlideShow::controlMedia(void)
 	}
 }
 
-
 void SlideShow::startRendering(void)
 {
 	hge->Gfx_BeginScene();
@@ -224,7 +223,8 @@ void SlideShow::renderBoundedString(hgeFont * fnt, float x, float y, int align, 
    }
 
    fnt->Render(x, y, strSub.c_str(), align);
-} 
+}
+
 
 //intro data:
 #define INTRO_TIME 78.0f
@@ -293,7 +293,6 @@ void SlideShow::renderBoundedString(hgeFont * fnt, float x, float y, int align, 
 #define SORROW_SEQUENCE_INDEX_2 12
 #define SORROW_SEQUENCE_INDEX_3 13
 #define SORROW_SEQUENCE_INDEX_4 14
-
 
 Intro::Intro(void)
 {
@@ -704,6 +703,7 @@ void Intro::renderText(void)
 	}
 }
 
+
 #define VICTORY_SCENE_TIME 37.0f
 #define VICTORY_SCENE_TEXT_START_TIME 2.0f
 #define VICTORY_SCENE_IMAGE_GHANGE_TIME 7.0f
@@ -1061,6 +1061,7 @@ void VictoryScene::renderText(void)
 	}
 }
 
+
 //Game over scene data:
 #define GAME_OVER_SCENE_TIME 31.0f
 #define GAME_OVER_SCENE_IMAGES_START_TIME 1.0f
@@ -1213,6 +1214,7 @@ void GameOverScene::renderText(void)
 	}
 }
 
+
 #define LEVEL_FINISHED_SCENE_TIME 5.0f
 #define LEVEL_FINISHED_SCENE_STAT_INCREMENT_TIME 0.05f
 #define LEVEL_FINISHED_SCENE_STAT_INTERVAL 0.1f
@@ -1290,6 +1292,7 @@ bool LevelFinishedScene::play(void)
 	render();
 	return true;
 }
+
 
 #define LEVEL_FINISHED_SCENE_HEIGHT_BETWEEN_STAT_ITEMS 30.0f
 #define LEVEL_FINISHED_SCENE_HEIGHT_BETWEEN_STAT_GROUPS 50.0f
@@ -1522,6 +1525,7 @@ void LevelFinishedScene::render(void)
 	hge->Gfx_EndScene();
 }
 
+
 #define MESSAGE_CENTER_X 400.0f
 #define MESSAGE_SCALE 0.7f
 
@@ -1561,6 +1565,7 @@ float Message::getY()
 {
 	return y;
 }
+
 
 #define FIRST_MESSAGE_Y 300
 #define MESSAGE_Y_SPACING 40.0f
@@ -1721,6 +1726,7 @@ void MessageManager::clear(void)
 	}
 	waitingMessagesNod->nextMessage = NULL;
 }
+
 
 int Game::SCREENWIDTH = 800;
 int Game::SCREENHEIGHT = 600;
@@ -2755,7 +2761,6 @@ void Game::startTrainingGame(void)
 	setState(LEVEL_RUN, 0.0f, 0.0f, FADING_TIME);
 }
 
-
 void Game::startGame(void)
 {
 	//levels:
@@ -2773,7 +2778,6 @@ void Game::startGame(void)
 
 	setState(LEVEL_LOAD);
 }
-
 
 void Game::loadLevel(void)
 {
@@ -3004,6 +3008,7 @@ void Game::midLevelDialog(void)
 	//Play sounds:
 	//...	
 }
+
 void Game::levelFinished(void)
 {
 /*
@@ -3295,6 +3300,7 @@ void Game::setTimerDelta(void)
 	else
 		timerDelta = hge->Timer_GetDelta();
 }
+
 void Game::processInput(void)
 {
 	int key = hge->Input_GetKey();
@@ -3487,7 +3493,6 @@ void Game::freeGameResources(void)
 		textObjects[i] = NULL;
 	}
 }
-
 
 void Game::renderDebugText(void)
 {

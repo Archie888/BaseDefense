@@ -89,6 +89,7 @@ void Turret::playAnimation(bool fire)
 	image->Update(timerDelta);
 }
 
+
 /*		
 //Muistiinpanoja:
 //x = 7, y = 3, d (hypotenuusa) = sqrt(7^2 + 3^2)= 7.61577 on siis kk:n etäisyys tornin keskipisteestä.
@@ -181,6 +182,7 @@ bool TankMachineGun::isReadyToFire(void)
 {
 	return ready_to_fire;
 }
+
 
 void TankObject::renderTankShadows(GameObject * object)
 {
@@ -275,6 +277,7 @@ void TankObject::renderTankShadows(GameObject * object)
 		}
 	}
 }
+
 
 int Tank::tanks = 0;
 
@@ -606,6 +609,7 @@ void Tank::release(void)
 	delete tankFireMGParticleSystem2; tankFireMGParticleSystem2 = NULL;
 	delete tankMoveParticleSystem; tankMoveParticleSystem = NULL;
 }
+
 void Tank::processAction(void)
 {
 	processOrders();

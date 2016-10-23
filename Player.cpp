@@ -425,7 +425,6 @@ void Player::finishLife(void)
 		}
 		else
 			gameOver = true;
-		//game.checkForGameOver()
 	}
 }
 

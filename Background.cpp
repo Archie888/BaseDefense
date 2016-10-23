@@ -26,7 +26,6 @@ Background::Background(const char * filename)
 	}
 }
 
-
 Background::~Background(void)
 {
 	delete image;
@@ -34,7 +33,6 @@ Background::~Background(void)
 	hge->Texture_Free(tex);
 	hge->Target_Free(target);
 }
-
 
 void Background::modify(hgeSprite * modification, float mx, float my, float mdirection, float scale, bool dbg)
 {

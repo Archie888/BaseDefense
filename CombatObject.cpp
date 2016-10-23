@@ -112,6 +112,7 @@ void MovingObject::setTurningDirection(Direction direction2)
 	turning = true;
 }
 
+
 Distance CombatObject::MAX_UNIT_DISTANCE_FROM_AREA = 100.0f;
 char CombatObject::sideNames[NUMBER_OF_SIDES][64];
 int CombatObject::colorIndexes[NUMBER_OF_SIDES];

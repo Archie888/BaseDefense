@@ -4016,6 +4016,7 @@ Rifleman::Rifleman(CombatObject::SIDE side, Location startingLocation, Direction
 	set(side, startingLocation, startDirection);
 }
 
+
 void Rifleman::set(CombatObject::SIDE side, Location startingLocation, Direction startDirection)
 {
 	FootSoldier::set(RIFLEMAN, side, startingLocation, startDirection);
@@ -4039,6 +4040,7 @@ void Rifleman:: render(void)
 {
 	FootSoldier::render();
 }
+
 void Rifleman::checkObject(GameObject * otherObject)
 {
 	if (side == DEFENDER_SIDE)
@@ -4138,7 +4140,6 @@ void Rifleman::checkObject(GameObject * otherObject)
 	}
 }
 
-
 void Rifleman::fireWeapon(void)
 {
 	fireAssaultRifle();
@@ -4188,6 +4189,7 @@ kivääri- ja pst-sotilaat tekevät:
   osoitteen validisuus ennen kuin asioita voidaan käsitellä.
   -Menee viikko kun miettii ja pähkäilee kaikkia hienouksia...
 */
+
 
 Time MachineGunner::MACHINE_GUN_RATE_OF_FIRE_FULL_AUTO = 60.0f / 800.0f;
 int MachineGunner::MACHINE_GUN_AMMO_CONTAINER_SIZE_FULL = 100;
@@ -4604,6 +4606,7 @@ void MachineGunner::fireWeapon(void)
 {
 	fireMachineGun();
 }
+
 void MachineGunner::fireMachineGun(void)
 {
 	clipAmmo--;
@@ -5457,6 +5460,7 @@ void AT_Soldier::setDeathAction(void)
 	image->SetFrame(animationWoundedFrames[currentAction] + 5);
 }
 
+
 #define MEDIC_MIN_DISTANCE_FROM_WOUNDED 8.0f
 #define MEDIC_MIN_DISTANCE_FROM_WOUNDED_SQUARED 64.0f
 //Kantajalle käy huonosti:
@@ -5482,7 +5486,6 @@ void AT_Soldier::setDeathAction(void)
 //-ukko palaa
 // -projektiilijuttuja, luultavasti tulee palamaan myös.
 
-//
 void Medic::init(void)
 {
 	game.renderLoadScreen("LOADING MEDIC CLASS");
@@ -6067,7 +6070,6 @@ void Medic::dropSoldier(void)
 		woundedSoldier->visible = true;
 		woundedSoldier->carried = false;
 		woundedSoldier->stop();
-		//game.objects.setOnTop(woundedSoldier, this);
 		woundedSoldier->setAction(ACTION_CARRIED_FALLING_1);
 		carrying_foot_soldier = false;
 		dropping_soldier = true;
@@ -6113,7 +6115,6 @@ void Medic::animationControl(void)
 		{
 			if (getWoundedSoldier())
 			{
-				//game.objects.setOnTop(this, getWoundedSoldier());
 				setWoundedSoldier(NULL);
 				dropping_soldier = false;
 			}
@@ -6121,6 +6122,7 @@ void Medic::animationControl(void)
 	}
 	FootSoldier::animationControl();
 }
+
 
 char * FootSoldier::getClassString(void)
 {
@@ -6385,7 +6387,6 @@ char * FootSoldier::getActionString(void)
 	return strings[currentAction];
 }
 
-
 char * FootSoldier::getBodyPositionString(void)
 {
 	if (getBodyPosition() == BODY_POSITION_STANDING)
@@ -6467,6 +6468,7 @@ char * Medic::getActionString(void)
 
 	return FootSoldier::getActionString();
 }
+
 
 Velocity SeparatedBodyPart::MIN_START_SPEED = 50.0f;
 Velocity SeparatedBodyPart::MAX_START_SPEED = 300.0f;
@@ -6626,6 +6628,7 @@ char * SeparatedBodyPart::getTypeString(void)
 
 	return strings[bodyPartType];
 }
+
 
 #define MILITARY_UNIT_MIN_BATTLE_SIZE_RATIO 0.2f
 #define MILITARY_UNIT_MIN_SURRENDER_DISTANCE 300.0f

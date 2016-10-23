@@ -30,10 +30,10 @@ void BackgroundObject::set(GameObject::TYPE type, Location location, Size size, 
 	GameObject::set(type, location, direction, size);
 }
 
-
 BackgroundObject::~BackgroundObject(void)
 {
 }
+
 
 Bush::Bush(void)
 {
@@ -51,7 +51,6 @@ void Bush::set(BackgroundObject::BACKGROUNDOBJECT_TYPE bushtype, Location locati
 	image = game.animations[Game::ANIMATION_BUSH_1 + (bushtype - BackgroundObject::BG_BUSH1)]; //new hgeAnimation(game.textures[Game::TEXTURE_BUSH_1 + (bushtype - BackgroundObject::BG_BUSH1)], 1, 0.0f, 0.0f, 0.0f, 64.0f, 64.0f);
 }
 
-
 Bush::~Bush(void)
 {
 }
@@ -61,6 +60,7 @@ void Bush::processInteraction(void)
 	game.objects.background->modify(image, x, y, direction, size);
 	destroy();
 }
+
 
 Size Tree::TANK_TURRET_BARREL_TURNING_SIZE = 1.0f;
 Height Tree::AVERAGE_TREE_HEIGHT = 64.0f;
@@ -139,6 +139,7 @@ void Tree::processAction(void)
 		image->Update(timerDelta);
 	}
 }
+
 void Tree::processInteraction(void)
 {
 	if (falling && !fallen)

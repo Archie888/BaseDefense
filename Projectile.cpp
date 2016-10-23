@@ -39,7 +39,6 @@ const Time Projectile::HAND_GRENADE_TIME = 3.0f;
 #define SMALL_PROJECTILE_GLOOM_SIZE 2.0f
 #define BIG_PROJECTILE_GLOOM_SIZE 3.0f
 
-
 Projectile::Projectile(void)
 {
 }
@@ -348,6 +347,7 @@ Height Projectile::getHeight(void)
 {
 	return distance / startDistance * startHeight;
 }
+
 
 #define SMOKE_GRENADE_TIMER 2.5f
 #define SMOKE_GRENADE_SPEED 350.0f

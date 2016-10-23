@@ -10,7 +10,6 @@ public:
 	bool accelerating;
 	bool deaccelerating;
 
-
 	Velocity speed;
 	Velocity turningSpeed;
 	Velocity acceleration;

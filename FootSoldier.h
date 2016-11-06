@@ -72,6 +72,7 @@ public:
 		DEFENSE_PHASE_FIGHT,
 		DEFENSE_PHASE_TURN_TO_DEFENSE_DIRECTION
 	};	
+
 	enum ATTACK_PHASE
 	{
 		ATTACK_PHASE_TURN_TO_ATTACK_DIRECTION,
@@ -867,6 +868,7 @@ public:
 
 	char * getTypeString(void);
 };
+
 class MilitaryUnit : public CombatAIObject
 {
 public:

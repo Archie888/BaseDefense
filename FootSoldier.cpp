@@ -17,7 +17,7 @@ Distance FootSoldier::COMBAT_DISTANCE = 500.0f;
 
 //Behaviour:
 Time FootSoldier::GRENADE_THROWING_INTERVAL = 30.0f;
-#define PROPABILITY_OF_THROWING_LAST_GRENADE_FIGHTING 0.1f
+#define PROBABILITY_OF_THROWING_LAST_GRENADE_FIGHTING 0.1f
 
 //general footsoldier information:
 int FootSoldier::FOOT_SOLDIER_AMOUNT_OF_GRENADES = 5;
@@ -1188,7 +1188,7 @@ void FootSoldier::fight(void)
 					{
 						if (grenades > 0)
 						{
-							if (randFloat(0.0f, 1.0f) < PROPABILITY_OF_THROWING_LAST_GRENADE_FIGHTING * grenades)
+							if (randFloat(0.0f, 1.0f) < PROBABILITY_OF_THROWING_LAST_GRENADE_FIGHTING * grenades)
 							{
 								setState(STATE_THROW_GRENADE);
 							}

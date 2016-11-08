@@ -500,13 +500,6 @@ void FootSoldier::processAI(void)
 	//1. juostaan tankin tulosuunnan vastakkaiseen suuntaan (tai tankin tulosuunntaan loivassa olevassa kulmassa olevaan vaarattomaan suuntaan, johon voidaan juosta). Pysähdytään, kun etäisyys tankista on riittävän suuri.
 	//2. Jatketaan hyökkäystä.
 
-	//dbg:
-	if (side == DEFENDER_SIDE)
-		int u = 2;
-
-	if (footSoldierClass == AT_SOLDIER)
-		int u = 2;
-
 	setEnemyTargetProperties();
 
 	//beginning of processing: set new image
@@ -1164,12 +1157,6 @@ void FootSoldier::defend(void)
 
 void FootSoldier::fight(void)
 {
-	if (side == ATTACKER_SIDE)
-		int u = 2;
-
-	if (footSoldierClass == MACHINE_GUNNER)
-		int u = 2;
-
 	switch (statePhase)
 	{
 	case FIGHTING_PHASE_FIGHT:

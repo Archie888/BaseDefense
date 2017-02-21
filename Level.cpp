@@ -22,7 +22,7 @@
 //FOOT SOLDIERS:
 //-a group appears at a given time
 //-usually two groups appear, in either side of the base.
-//-same randomity as with attacker groups.
+//-same randomness as with attacker groups.
 
 float Level::APPEARANCE_TIME_RANDOMNESS = 10.0f;
 float Level::TANK_APPEARANCE_X_RANDOMNESS = 50.0f;
